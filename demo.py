@@ -10,15 +10,14 @@ demo_from = "+16697219918"
 
 @app.route("/", methods=['GET', 'POST'])
 def demo():
-    """Respond to incoming calls with a simple text message."""
+    from_number = request.values.get('From', None)
 
     resp = twilio.twiml.Response()
-    resp.message("Hello, Mobile Monkey")
+    resp.message("Hello, ", from_number)
     return str(resp)
 
 if __name__ == "__main__":
     app.run(debug=True)
-
 
 
 # message = client.messages.create(to="+14088215768", from_=demo_from,
