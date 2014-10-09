@@ -21,7 +21,7 @@ def demo():
     elif last_digit < 6:
         msg = "Congrats! You just earned 2 points at Viztango Cafe. You're 6 points away from a free sandwich!"
     else:
-        msg = "We haven't seen you around for a while...we miss you! Come in this week and get 20% off your order."
+        msg = "We miss your face at Viztango! Come in this week and get 20% off your order."
 
     resp = twilio.twiml.Response()
     resp.message(msg)
