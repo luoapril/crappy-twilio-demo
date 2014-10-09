@@ -10,8 +10,9 @@ demo_from = "+16697219918"
 
 @app.route("/", methods=['GET', 'POST'])
 def demo():
-    from_number = request.values.get('From', None)
-    # from_number = from_number[1:]
+    from_number = str(request.values.get('From', None))
+    from_number = from_number[1:]
+    from_number = int(from_number)
     # last_digit = from_number % 10
 
     # msg = "Cats cats cats"
