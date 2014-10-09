@@ -12,7 +12,7 @@ demo_from = "+16697219918"
 def demo():
     from_number = str(request.values.get('From', None))
     from_number = from_number[1:]
-    from_number = int(from_number)
+    # from_number = int(from_number)
     # last_digit = from_number % 10
 
     # msg = "Cats cats cats"
