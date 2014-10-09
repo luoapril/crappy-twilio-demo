@@ -23,7 +23,7 @@ def demo():
         msg = "We haven't seen you around for a while...we miss you! Come in within the next week to receive 10\% \off your order."
 
     resp = twilio.twiml.Response()
-    resp.message(msg)
+    resp.message("sup")
     return str(resp)
 
 if __name__ == "__main__":
