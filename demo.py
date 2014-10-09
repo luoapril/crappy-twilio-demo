@@ -10,18 +10,18 @@ demo_from = "+16697219918"
 
 @app.route("/", methods=['GET', 'POST'])
 def demo():
-    from_number = str(request.values.get('From', None))
-    from_number = from_number[1:]
-    from_number = int(from_number)
-    last_digit = from_number % 10
+    # from_number = str(request.values.get('From', None))
+    # from_number = from_number[1:]
+    # from_number = int(from_number)
+    # last_digit = from_number % 10
 
     msg = "Cats cats cats"
-    if last_digit < 3:
-        msg = "Welcome to FiveStars, the rewards program of Viztango Cafe. Reply \"YES\" to get a free bonus point!"
-    elif last_digit < 6:
-        msg = "Congrats! You just earned 2 points for your last visit to Viztango Cafe. You're 6 points away from a free drink!"
-    else:
-        msg = "We haven't seen you around for a while...we miss you! Come in this week and receive 20% off your order."
+    # if last_digit < 3:
+    #     msg = "Welcome to FiveStars, the rewards program of Viztango Cafe. Reply \"YES\" to add a free bonus point!"
+    # elif last_digit < 6:
+    #     msg = "Congrats! You just earned 2 points at Viztango Cafe. You're 6 points away from a free sandwich!"
+    # else:
+    #     msg = "We haven't seen you around for a while...we miss you! Come in this week and get 20% off your order."
 
     resp = twilio.twiml.Response()
     resp.message(msg)
@@ -29,7 +29,3 @@ def demo():
 
 if __name__ == "__main__":
     app.run(debug=True)
-
-
-# message = client.messages.create(to="+14088215768", from_=demo_from,
-#                                  body="Hello there!")
