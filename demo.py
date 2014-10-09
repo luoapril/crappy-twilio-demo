@@ -11,8 +11,8 @@ demo_from = "+16697219918"
 @app.route("/", methods=['GET', 'POST'])
 def demo():
     from_number = request.values.get('From', None)
-    from_number = from_number[1:]
-    last_digit = from_number % 10
+    # from_number = from_number[1:]
+    # last_digit = from_number % 10
 
     # msg = "Cats cats cats"
     # if last_digit < 3:
@@ -23,7 +23,7 @@ def demo():
     #     msg = "We haven't seen you around for a while...we miss you! Come in within the next week to receive 10\% \off your order."
 
     resp = twilio.twiml.Response()
-    resp.message("sup")
+    resp.message("sup " + from_number)
     return str(resp)
 
 if __name__ == "__main__":
