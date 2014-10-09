@@ -9,7 +9,7 @@ client = TwilioRestClient(account, token)
 demo_from = "+16697219918"
 
 @app.route("/", methods=['GET', 'POST'])
-def hello_monkey():
+def demo():
     """Respond to incoming calls with a simple text message."""
 
     resp = twilio.twiml.Response()
