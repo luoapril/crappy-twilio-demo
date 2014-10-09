@@ -13,7 +13,7 @@ def demo():
     from_number = request.values.get('From', None)
 
     resp = twilio.twiml.Response()
-    resp.message("Hello, hello")
+    resp.message("Hello, hello " + from_number)
     return str(resp)
 
 if __name__ == "__main__":
