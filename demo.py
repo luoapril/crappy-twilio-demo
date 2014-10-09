@@ -12,19 +12,19 @@ demo_from = "+16697219918"
 def demo():
     from_number = str(request.values.get('From', None))
     from_number = from_number[1:]
-    # from_number = int(from_number)
-    # last_digit = from_number % 10
+    from_number = int(from_number)
+    last_digit = from_number % 10
 
-    # msg = "Cats cats cats"
-    # if last_digit < 3:
-    #     msg = "Welcome to FiveStars, the rewards program of Viztango Cafe. Reply \"YES\" to get a free bonus point!"
-    # elif last_digit < 6:
-    #     msg = "Congrats! You just earned 2 points for your last visit to Viztango Cafe. You're 6 points away from a free drink!"
-    # else:
-    #     msg = "We haven't seen you around for a while...we miss you! Come in within the next week to receive 10\% \off your order."
+    msg = "Cats cats cats"
+    if last_digit < 3:
+        msg = "Welcome to FiveStars, the rewards program of Viztango Cafe. Reply \"YES\" to get a free bonus point!"
+    elif last_digit < 6:
+        msg = "Congrats! You just earned 2 points for your last visit to Viztango Cafe. You're 6 points away from a free drink!"
+    else:
+        msg = "We haven't seen you around for a while...we miss you! Come in this week and receive 20% off your order."
 
     resp = twilio.twiml.Response()
-    resp.message("sup " + from_number)
+    resp.message(msg)
     return str(resp)
 
 if __name__ == "__main__":
